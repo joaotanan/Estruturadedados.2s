@@ -6,11 +6,9 @@
 
 int main() {
 
-    Time * Tabela = LerDados("tabela.csv");
+    Equipe * tabela = LerDados("tabela.csv");
 
-    for(int i = 0; i < 20; i++){
-        printf("%d\t%.2f%%\t%s\n", Tabela[i].Posicao, Tabela[i].Aproveitamento, Tabela[i].Equipe);
-    }
+    printf("%.2f%%\n", getAproveitamento(tabela, "Palmeiras"));
 
-    return 0;
+
 }

@@ -1,19 +1,27 @@
 #ifndef EQUIPE_H
 #define EQUIPE_H
 
+// Definindo o TAD Equipe
+
+#define ERRO -999
+
 typedef struct {
     int Posicao;
-    char Estado[32];
-    char Equipe[32];
+    char Estado[50];
+    char Nome[50];
     int Pontos;
-    int J; // N° de jogos
-    int V; // N° de vitórias
-    int E; // N° de empates
-    int D; // N° de derrotas
-    int GP; // Gols marcados
-    int GC; // Gols sofridos
-    int SD; // Saldo de gols
-    float Aproveitamento; // % de pontos conquistados em relação ao total de pontos disputados
-} Time;
+    int J;
+    int V;
+    int E;
+    int D;
+    int GP;
+    int GC;
+    int SG;
+    float Aproveitamento; // % de pontos conquistados
+} Equipe;
+
+Equipe * LerDados(char * NomeArquivo); // retornar vetor de equipes
+int getpontos(Equipe * T, int Posicao);
+float getAproveitamento(Equipe * T, char * Nome);
 
 #endif
